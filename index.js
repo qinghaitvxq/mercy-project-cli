@@ -47,6 +47,8 @@ program
         download(repoUrl, downloadPath, { clone: true }, function (err) {
           spinner.succeed();
           const packagePath = path.join(downloadPath, "package.json");
+          console.log("--check repoUrl Path---", repoUrl);
+          console.log("--check Packag Path---", packagePath);
           // 判断是否有package.json, 要把输入的数据回填到模板中
           if (fs.existsSync(packagePath)) {
             const content = fs.readFileSync(packagePath).toString();
